@@ -1,0 +1,166 @@
+---
+
+---
+
+<div id="login"
+  class="flex items-center justify-center min-h-screen bg-gradient-to-r from-blue-500 to-purple-600 p-4"
+>
+  <div
+    class="flex flex-col md:flex-row w-full max-w-4xl bg-white rounded-lg shadow-lg animate-fade-in overflow-hidden"
+  >
+    <!-- Left Section -->
+    <div
+      class="flex flex-col justify-center items-center w-full md:w-1/2 bg-gradient-to-r from-purple-600 to-blue-500 p-8 text-white"
+    >
+      <blockquote class="text-4xl font-bold mb-4 text-center">
+        Make a <span
+          class="text-gradient font-extrabold hover:animate-handshake"
+          >Dream</span
+        > Come <span class="text-gradient font-extrabold animate-pulse"
+          >True</span
+        >
+      </blockquote>
+      <p class="text-lg text-center">
+        Join our LMS and start your journey today.
+      </p>
+    </div>
+    <!-- Right Section -->
+    <div class="w-full md:w-1/2 p-8">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6 text-center text-blue-600">
+        LMS Login
+      </h2>
+      <form>
+        <div class="mb-4">
+          <label
+            class="block text-gray-700 text-sm font-bold mb-2"
+            for="username"
+          >
+            Username
+          </label>
+          <input
+            class="input input-bordered w-full"
+            id="username"
+            type="text"
+            placeholder="Username"
+          />
+        </div>
+        <div class="mb-6">
+          <label
+            class="block text-gray-700 text-sm font-bold mb-2"
+            for="password"
+          >
+            Password
+          </label>
+          <input
+            class="input input-bordered w-full"
+            id="password"
+            type="password"
+            placeholder="******************"
+          />
+        </div>
+        <div class="flex items-center justify-between mb-4">
+          <button class="btn btn-primary w-full" type="button">
+            Sign In
+          </button>
+        </div>
+        <div class="text-center mb-4">
+          <a href="#" class="text-blue-500 hover:text-blue-700 text-sm"
+            >Forgot Password?</a
+          >
+        </div>
+        <div class="divider">OR</div>
+        <div class="flex flex-col space-y-2">
+          <button
+            class="btn btn-outline btn-primary w-full flex items-center justify-center space-x-2"
+          >
+            <span
+              class="iconify w-6 h-6"
+              data-icon="logos:google-icon"
+              data-inline="false"></span>
+            <span>Sign in with Google</span>
+          </button>
+          <button
+            class="btn btn-outline btn-primary w-full flex items-center justify-center space-x-2"
+          >
+            <span
+              class="iconify w-6 h-6"
+              data-icon="logos:facebook"
+              data-inline="false"></span>
+            <span>Sign in with Facebook</span>
+          </button>
+          <button
+            class="btn btn-outline btn-primary w-full flex items-center justify-center space-x-2"
+          >
+            <span
+              class="iconify w-6 h-6"
+              data-icon="logos:twitter"
+              data-inline="false"></span>
+            <span>Sign in with Twitter</span>
+          </button>
+        </div>
+        <div class="text-center mt-4">
+          <p class="text-gray-500 text-sm">
+            Don't have an account? <a
+              href="#"
+              class="text-blue-500 hover:text-blue-700">Register</a
+            >
+          </p>
+        </div>
+      </form>
+      <p class="text-center text-gray-500 text-xs mt-4">
+        &copy;2023 Your LMS. All rights reserved.
+      </p>
+    </div>
+  </div>
+</div>
+
+<style>
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 1s ease-in-out;
+  }
+
+  .text-gradient {
+    background: linear-gradient(90deg, #ff7e5f, #feb47b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .animate-bounce {
+    animation: bounce 2s infinite;
+  }
+
+  .animate-pulse {
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes handshake {
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(-10px);
+    }
+    50% {
+      transform: translateX(10px);
+    }
+    75% {
+      transform: translateX(-10px);
+    }
+  }
+
+  .hover\:animate-handshake:hover {
+    animation: handshake 0.5s ease-in-out;
+  }
+</style>
+
+<script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
