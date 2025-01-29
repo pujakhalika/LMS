@@ -1,6 +1,5 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
-
 import tailwind from '@astrojs/tailwind';
 import icon from "astro-icon";
 
@@ -9,4 +8,8 @@ export default defineConfig({
   root: "./src",
   integrations: [tailwind(), icon()],
   base: "/lms",
+  experimental: {
+    responsiveImages: true,
+    svg: true,
+  },
 });

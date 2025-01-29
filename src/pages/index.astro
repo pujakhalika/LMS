@@ -7,6 +7,7 @@ import FAQ from "../components/sections/FAQ.astro";
 import Features from "../components/sections/Features.astro";
 import CTA from "../components/sections/CTA.astro";
 import Solutions from "../components/sections/Solutions.astro";
+import Icon from "astro-icon";
 ---
 
 <Layout title="Welcome to the LMS Project">
@@ -18,19 +19,56 @@ import Solutions from "../components/sections/Solutions.astro";
     <Features className="py-10 md:py-16" />
     <FAQ className="py-10 md:py-16" />
     <CTA className="py-10 md:py-16" />
-    <!-- Hero -->
-    <!-- headline, subheading, image, cta button, results -->
-    <!-- Problems/Solutions -->
-    <!-- title, painpoint, aggitate pain, introduce solution, video  -->
-    <!-- Benefits/Services -->
-    <!-- benefit title, thanks to features, visual -->
-    <!-- Testimonials/Brands -->
-    <!-- reviews, partners -->
-    <!-- Features -->
-    <!-- ~10 features, more technical than emotional, in a list -->
-    <!-- FAQ -->
-    <!-- questions, answers, video -->
-    <!-- CTA -->
-    <!-- Question, button -->
+    <button
+      id="back-to-top"
+      class="hidden fixed bottom-4 right-4 btn btn-primary z-50 p-3 rounded-full shadow-lg transition-transform transform hover:scale-110"
+    >
+      <svg
+        class="w-6 h-6"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+      </svg>
+    </button>
   </main>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const backToTopButton = document.getElementById("back-to-top");
+
+      if (backToTopButton) {
+        window.addEventListener("scroll", function () {
+          if (window.scrollY > 300) {
+            backToTopButton.classList.remove("hidden");
+          } else {
+            backToTopButton.classList.add("hidden");
+          }
+        });
+
+        backToTopButton.addEventListener("click", function () {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          });
+        });
+      }
+    });
+  </script>
+
+  <style>
+    #back-to-top {
+      @apply hidden fixed bottom-4 right-4 btn btn-primary z-50 p-3 rounded-full shadow-lg transition-transform transform hover:scale-110;
+    }
+
+    #back-to-top:not(.hidden) {
+      @apply block;
+    }
+  </style>
 </Layout>

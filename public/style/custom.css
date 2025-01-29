@@ -24,7 +24,7 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  font-family: "Raleway", sans-serif;
+  font-family: "Fira Sans", sans-serif;
 }
 
 [data-toggle-nav][data-open-nav="true"] #line1 {

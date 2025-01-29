@@ -1,5 +1,16 @@
 {
   "extends": "astro/tsconfigs/strict",
-  "include": [".astro/types.d.ts", "**/*", "!src/pages/login.astro", "!src/pages/signup.astro"],
-  "exclude": ["dist", "src/components/sections/LoginSection.astro"]
+  "include": [
+    ".astro/types.d.ts",
+    "**/*",
+    "!src/pages/login.astro",
+    "!src/pages/signup.astro"
+  ],
+  "exclude": [
+    "dist",
+    "src/components/sections/LoginSection.astro"
+  ],
+  "compilerOptions": {
+    "allowImportingTsExtensions": true
+  },
 }

@@ -20,14 +20,35 @@ const { title } = Astro.props;
       content="Learning Management System By Puja Khalika Buana"
     />
     <title>LMS - {title}</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
     <link rel="stylesheet" href="/lms/style/custom.css" />
+    <style>
+      /* Animasi untuk transisi tema */
+      .theme-transition {
+        transition:
+          background-color 0.5s,
+          color 0.5s;
+      }
+
+      /* Animasi untuk navigasi */
+      .navbar-transition {
+        transition: height 0.3s ease;
+      }
+
+      .overlay-transition {
+        transition: opacity 0.3s ease;
+      }
+
+      .overlay-visible {
+        opacity: 1;
+      }
+
+      .overlay-hidden {
+        opacity: 0;
+      }
+    </style>
   </head>
-  <body class="overflow-hidden overflow-y-auto bg-body">
-    <Navbar />
+  <body class="overflow-hidden overflow-y-auto bg-body theme-transition">
+    <Navbar class="navbar-transition" />
     <slot />
     <Footer />
   </body>
@@ -97,11 +118,15 @@ const { title } = Astro.props;
         if (toggleMenu.getAttribute("data-open-nav") === "false") {
           toggleMenu.setAttribute("data-open-nav", "true");
           overlayNav.setAttribute("data-is-visible", "true");
+          overlayNav.classList.add("overlay-visible");
+          overlayNav.classList.remove("overlay-hidden");
           document.body.classList.add("!overflow-y-hidden");
           navbar.style.height = `${navbar.scrollHeight}px`;
         } else {
           toggleMenu.setAttribute("data-open-nav", "false");
           overlayNav.setAttribute("data-is-visible", "false");
+          overlayNav.classList.add("overlay-hidden");
+          overlayNav.classList.remove("overlay-visible");
           document.body.classList.remove("!overflow-y-hidden");
           navbar.style.height = "0px";
         }
@@ -110,6 +135,8 @@ const { title } = Astro.props;
       navbar.addEventListener("click", () => {
         toggleMenu.setAttribute("data-open-nav", "false");
         overlayNav.setAttribute("data-is-visible", "false");
+        overlayNav.classList.add("overlay-hidden");
+        overlayNav.classList.remove("overlay-visible");
         document.body.classList.remove("!overflow-y-hidden");
         navbar.style.height = "0px";
       });
@@ -117,6 +144,8 @@ const { title } = Astro.props;
       overlayNav.addEventListener("click", () => {
         toggleMenu.setAttribute("data-open-nav", "false");
         overlayNav.setAttribute("data-is-visible", "false");
+        overlayNav.classList.add("overlay-hidden");
+        overlayNav.classList.remove("overlay-visible");
         document.body.classList.remove("!overflow-y-hidden");
         navbar.style.height = "0px";
       });
